@@ -1,0 +1,5 @@
+# Prod files shouldn't be on repo
+dist/
+
+# Dependencies should stay as dependencies
+node_modules/
