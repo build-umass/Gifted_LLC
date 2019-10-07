@@ -1,0 +1,21 @@
+#navbar {
+    margin: 0;
+    padding: 4px 0px;
+    height: 40px;
+    min-width: 800px;
+    list-style-type: none;
+    margin-bottom: 40px;
+    background-color: slategray;
+}
+
+.nav-label {
+    font-size: 20px;
+    padding: 8px 10px;
+    display: inline-block;
+    color: #f4f7f7;
+    cursor: pointer;
+}
+
+.nav-label:hover {
+    background-color: rgb(97, 103, 109);
+}

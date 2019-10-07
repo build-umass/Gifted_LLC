@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    background-color: white;
+}
+
+button {
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.fakeLink {
+    text-decoration: none;
+    cursor: pointer;
+}
