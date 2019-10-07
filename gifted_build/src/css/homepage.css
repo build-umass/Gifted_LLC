@@ -1,0 +1,15 @@
+#container {
+    min-height: 760px;
+    text-align: center;
+}
+
+.title {
+    height: 60px;
+    color: slategrey;
+    font-size: 32px;
+}
+
+#container img {
+    width: 120px;
+}
+
