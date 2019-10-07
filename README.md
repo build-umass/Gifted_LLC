@@ -46,12 +46,19 @@ Many of you know how git works, but to reiterate the main points
 For people who are completely new to git, refer to this [**tutorial**](https://www.tutorialspoint.com/git/index.htm) for help when needed.
 Basically we're all changing code on a cloud, which syncs with the code on your machine
 great commands are,
+
 `git pull` - Grabs the most current versions of the code to your local machine ([**merge**](https://stackoverflow.com/questions/38216541/visual-studio-code-how-to-resolve-merge-conflicts-with-git) conflicts arrises)
+
 `git branch branch_name` - creates a new branch with the name branch_name. Use this to work on your own version of the code
+
 `git checkout branch_name` - use this to switch the branch you are working on to branch_name
+
 `git status` - Shows what branch you're on and what files you've changed. Also shows what files are staged
+
 `git add file_name` - stages the file_name to be added with a commit
+
 `git commit -m "commit message goes here` - commits staged files to your local repository
+
 `git push` - pushes your changes to the local repository to the remote repo. (pretty hard to undo)
 
 #### Any questions slack the tech lead, Steven Tran, or one of the PMs, Evan Epstein or Meryl Wheeler
