@@ -5,23 +5,27 @@
     min-width: 800px;
     list-style-type: none;
     margin-bottom: 40px;
-    background-color: slategray;
+    background-color: rgb(255, 255, 255);
 }
 
-#button-right {
+.button-right {
     float: right;
+    
 }
 
-#button-left {
+.button-left {
     float: left;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
 }
 
 .nav-label {
     font-size: 20px;
     padding: 8px 10px;
     display: inline-block;
-    color: #f4f7f7;
+    color: #000000;
     cursor: pointer;
+    
 }
 
 .nav-label:hover {
