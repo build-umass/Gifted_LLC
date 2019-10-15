@@ -8,6 +8,14 @@
     background-color: slategray;
 }
 
+#button-right {
+    float: right;
+}
+
+#button-left {
+    float: left;
+}
+
 .nav-label {
     font-size: 20px;
     padding: 8px 10px;
