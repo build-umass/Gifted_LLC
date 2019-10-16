@@ -1,0 +1,15 @@
+.top-about {
+    float:left;
+}
+
+.top-img {
+    float: right;
+}
+
+.bottom-about {
+    float: right;
+}
+
+.bottom-img{
+    float:left;
+}
