@@ -8,11 +8,11 @@
     background-color: slategray;
 }
 
-#button-right {
+.button-right {
     float: right;
 }
 
-#button-left {
+.button-left {
     float: left;
 }
 
