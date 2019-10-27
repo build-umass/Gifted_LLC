@@ -20,6 +20,8 @@
 
 .button-home{
     margin-left:5%;
+    width: 110 px;
+    height: 110 px;
 }
 
 .button-left {
@@ -33,8 +35,4 @@
     display: inline-block;
     color: #000000;
     cursor: pointer;
-}
-
-.nav-label:hover {
-    background-color: rgb(97, 103, 109);
 }

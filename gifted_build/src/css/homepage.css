@@ -5,9 +5,21 @@
     text-align: center;
 }
 
-#shop_container {
+#large_logo {
+    text-align: center;
+    margin-bottom: 15%;
+}
+
+#gifted_logo {
+    height: 80%;
+    width: 600px;
+    width: 400px;
+}
+
+.shop_container {
     min-height: 500px;
     text-align: center;
+    margin-bottom: 40px;
 }
 
 #mission_statement_container {
@@ -26,6 +38,7 @@
 
 #learn_more_button {
     text-align: center;
+    align-content: center;
     width: 10%;
     min-height: 45px; 
     background-color: #000000;
@@ -33,23 +46,16 @@
     margin-left: 482px;
 }
 
-img {
-    max-width:28%;
-    height:auto;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-
 .title {
     padding-bottom: 5px;
+    text-align:center;
     color: rgb(0, 0, 0);
     font-size: 60px;
     font-family: 'Barlow', monospace;
 }
 
 h1 {
-    font-family: garamond;
+    font-family: 'Barlow', sans-serif;
     font-weight: normal;
 }
 
@@ -112,7 +118,9 @@ h1 {
     text-align: center;
 }
 
-#container img {
-    width: 120px;
+.shirt_item {
+    width: 350px;
+    height: 350px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-
