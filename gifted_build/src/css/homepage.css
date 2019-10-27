@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:500&display=swap');
+
 #brand_container {
     min-height: 250px;
     text-align: center;
@@ -43,7 +45,7 @@ img {
     padding-bottom: 5px;
     color: rgb(0, 0, 0);
     font-size: 60px;
-    font-family: monospace;
+    font-family: 'Barlow', monospace;
 }
 
 h1 {
@@ -92,6 +94,7 @@ h1 {
 .paragraph {
     color: rgb(0, 0, 0);
     font-size: 20px;
+    font-family: 'Barlow', sans-serif;
 }
 
 .learn_more_p {

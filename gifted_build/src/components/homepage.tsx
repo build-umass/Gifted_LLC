@@ -1,19 +1,19 @@
 import * as React from "react";
 import "../css/homepage.css"
+import shop_item from "./shop_item";
+
 
 class Homepage extends React.Component<{}, {}> {
-
-    
     render () {
         return (
             <div>
                 <div id="brand_container">
-                    <div className="title">GIFTED CLOTHING BRAND,</div>
+                    <div className="title">Gifted Clothing Brand,</div>
                     <div className="title">LLC</div>
                     <p className="paragraph">Everyone is.</p>
                 </div>
                 <div id="shop_container">
-                    <img src={require('../files/shirt1.jpg')} />
+                <img src={require('../files/shirt1.jpg')} />
                     <img src={require('../files/shirt2.jpg')} />
                     <img src={require('../files/shirt3.jpg')} />
                     <div className="description1">Unisex Combined Logo Script T</div>
@@ -31,7 +31,6 @@ class Homepage extends React.Component<{}, {}> {
                         </div>
                     </div>
                 </div>
-                
             </div>
         )
     }
