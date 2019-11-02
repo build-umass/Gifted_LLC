@@ -1,4 +1,3 @@
-const { Client } = require('pg');
 const knex = require('knex')({
     client: 'pg',
     connection: {
