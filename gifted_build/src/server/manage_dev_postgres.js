@@ -19,7 +19,7 @@ async function resetDB() {
             table.string('product_info', 511)
             table.string('size_and_fit', 511)
             table.string('materials_and_care', 511)
-            table.decimal('price', 6, 3) //6 digits precision (total number of digits), 5 digits scale (# of digits to right of decimal point)
+            table.decimal('price', 6, 3) //6 digits precision (total number of digits), 3 digits scale (# of digits to right of decimal point)
             // The product description displayed in bold to the right of the product image
             table.string('description', 511)
             // The "conventional" method is to use a linking table
@@ -29,6 +29,7 @@ async function resetDB() {
         console.log(`Creating ${product_images_table} table`)
         await knex.schema.createTable(product_images_table, table => {
             table.string('SKU', 255).references(`${products_table}.SKU`)
+            table.string('color')
             table.binary('image')
         })
 }
