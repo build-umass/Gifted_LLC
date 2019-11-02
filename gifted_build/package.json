@@ -32,7 +32,9 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "knex": "^0.20.1",
+    "pg": "^7.12.1"
   },
   "license": "ISC"
 }
