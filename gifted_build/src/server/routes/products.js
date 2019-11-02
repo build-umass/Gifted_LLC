@@ -12,20 +12,14 @@ const knex = require('knex')({
 const express = require('express');
 const router = express.Router();
 
-router.get('/products/', (req, res) => {
+router.get('/products', (req, res) => {
     knex('products')
         .select()
         .then(rows => {
             console.log(rows)
             res.json(rows)
-            //res.send("test")
-            //res.end(rows)
         })
         .catch(err => res.end({err: err}))
 })
-
-router.get('/', function(req, res) {
-    res.send("I'm a little teacup");
-});
 
 module.exports = router;

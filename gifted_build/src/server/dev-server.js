@@ -25,6 +25,6 @@ app.use('*', (req, res, next) => {
 
 app.listen(3000, () => console.log('dev app listening on port 3000'))
 
-server.use(require('./routes/test'));
+server.use(require('./routes/products'));
 
 server.listen(8080, () => console.log('backend server listening on port 8080'))
