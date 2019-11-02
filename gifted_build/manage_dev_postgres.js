@@ -71,6 +71,8 @@ async function populateDB() {
 }
 
 (async () => {
+    console.log("This script is for the DEVELOPMENT DB only.")
+    console.log("Do NOT use this on the production DB!")
     let exit_code = 0
     try {
         // Try to get the database version as a sanity check.
