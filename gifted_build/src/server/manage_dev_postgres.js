@@ -22,8 +22,6 @@ async function resetDB() {
             table.decimal('price', 6, 3) //6 digits precision (total number of digits), 3 digits scale (# of digits to right of decimal point)
             // The product description displayed in bold to the right of the product image
             table.string('description', 511)
-            // The "conventional" method is to use a linking table
-            table.json('colors')
         })
 
         console.log(`Creating ${product_images_table} table`)
