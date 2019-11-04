@@ -10,6 +10,6 @@ app.get('*', function(req, res) {
 
 app.listen(3000, () => console.log('app listening on port 3000'))
 
-server.use(require('./routes/test'));
+server.use(require('./routes/products'));
 
 server.listen(8080, () => console.log('backend server listening on port 8080'))
