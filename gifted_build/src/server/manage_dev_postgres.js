@@ -1,19 +1,23 @@
 const { knex } =  require('./database')
 
-const product_images_table = "product_images"
-const products_table = "products"
+const product_images = "product_images"
+const products = "products"
+const users = "users"
 
 // Deletes existing tables and recreates them
 async function resetDB() {
-        // Reset the tables
-        console.log(`Dropping ${product_images_table} table`)
-        await knex.schema.dropTableIfExists(product_images_table)
+        const dropTable = async (table_name) => {
+            console.log(`Dropping ${table_name} table`)
+            return knex.schema.dropTableIfExists(table_name)
+        }
 
-        console.log(`Dropping ${products_table} table`)
-        await knex.schema.dropTableIfExists(products_table)
+        await dropTable(users)
+        // Must drop product_images table before products table because of foreign key constraint
+        await dropTable(product_images)
+        await dropTable(products)
 
-        console.log(`Creating ${products_table} table`)
-        await knex.schema.createTable(products_table, table => {
+        console.log(`Creating ${products} table`)
+        await knex.schema.createTable(products, table => {
             table.string('SKU', 255).primary() //SKUs should be unique
             table.string('title', 255)
             table.string('product_info', 511)
@@ -24,18 +28,26 @@ async function resetDB() {
             table.string('description', 511)
         })
 
-        console.log(`Creating ${product_images_table} table`)
-        await knex.schema.createTable(product_images_table, table => {
-            table.string('SKU', 255).references(`${products_table}.SKU`)
+        console.log(`Creating ${product_images} table`)
+        await knex.schema.createTable(product_images, table => {
+            table.string('SKU', 255).references(`${products}.SKU`)
             table.string('color')
             table.binary('image')
+        })
+
+        console.log(`Creating ${users} table`)
+        await knex.schema.createTable(users, table => {
+            table.string('username').primary()
+            table.string('hash')
+            // no salt needed because bcrypt stores the salt in the hash
+            //table.string('salt')
         })
 }
 
 // Inserts sample data into the tables
 async function populateDB() {
-    console.log(`Populating ${products_table} table`)
-    await knex(products_table).insert([
+    console.log(`Populating ${products} table`)
+    await knex(products).insert([
         {
             SKU: '36523641234523',
             title: "Unisex Combined Logo & Script Tee",
@@ -44,7 +56,7 @@ async function populateDB() {
             materials_and_care: `50/50 cotton/polyester.\nMachine washable, cold, with like colors.`,
             price: 22.00,
             description: `A portion of this sale goes towards Special Olympics New York. Thank you for continuing to support this great foundation. You can read more about our partnership by visiting the "Our Partners" section of our website.\nClassic, cool, comfortable. The new style in streetwear starts with Gifted.\nWith a fresh yet simple style, Gifted provides a slick, high quality, unisex tee.`,
-            colors: JSON.stringify(['black'])
+            //colors: JSON.stringify(['black'])
         },
         {
             SKU: '21354654',
@@ -54,9 +66,17 @@ async function populateDB() {
             materials_and_care: `50/50 cotton/polyester.\nMachine washable, cold, with like colors.`,
             price: 22.00,
             description: `A portion of this sale goes towards Special Olympics New York. Thank you for continuing to support this great foundation. You can read more about our partnership by visiting the "Our Partners" section of our website.\nClassic, cool, comfortable. The new style in streetwear starts with Gifted.\nWith a fresh yet simple style, Gifted provides a slick, high quality, unisex tee.`,
-            colors: JSON.stringify(['black', 'white'])
+            //colors: JSON.stringify(['black', 'white'])
         }
     ])
+  console.log(`Populating ${users} table`)
+  await knex(users).insert([
+      {
+          username: 'build',
+          // This is the hash of "foobar" with salt rounds set to 10
+          hash: '$2b$10$4DMSLxrhtoLtVPmgJfG8uOk8u5agQmKjiOHH4j9dbTjk.JxGdriOe'
+      }
+  ])
 }
 
 (async () => {
