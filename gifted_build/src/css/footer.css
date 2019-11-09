@@ -2,8 +2,16 @@
     clear: both;
     position: relative;
     height: 80px;
-    background-color: slategrey;
+    background-color: rgb(240, 243, 245);
     color: white;
     text-align: center;
     padding: 20px 0px;
 }
+
+.footer_information {
+    color: black;
+    font-family: monospace;
+    padding-top: 10px;
+}
+
+
