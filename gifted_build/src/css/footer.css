@@ -1,9 +1,10 @@
 #footer {
     clear: both;
     position: relative;
-    height: 80px;
-    background-color: slategrey;
-    color: white;
+    height: 30%;
+    background-color:white;
+    border: solid;
     text-align: center;
     padding: 20px 0px;
+    margin-bottom: 0%;
 }
