@@ -4,7 +4,18 @@ let knex;
 // and figuring out how to connect to the DB later.
 // Knex has the option to provide a knexfile, with different configurations for dev vs prod
 if (process.env.NODE_ENV == 'production') {
-    knex = knexConstructor({ /* insert production configuration */ })
+    // TODO: Change this to a real production configuration
+    knex = knexConstructor({
+        client: 'pg',
+        connection: {
+          user: 'build',
+          host: 'localhost',
+          database: 'api',
+          password: 'password',
+          port: 5432
+        },
+        pool: { min: 0, max: 5 } // no logic to these numbers
+    })
 } else {
     knex = knexConstructor({
         client: 'pg',
