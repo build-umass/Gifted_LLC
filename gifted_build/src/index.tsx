@@ -16,6 +16,6 @@ const Body = (
     </Router>
 )
 
-ReactDOM.render(<NavBar />, document.getElementById('nav'));
+// ReactDOM.render(<NavBar />, document.getElementById('nav'));
 ReactDOM.render(Body, document.getElementById('root'));
-ReactDOM.render(<Footer />, document.getElementById('foot'));
+// ReactDOM.render(<Footer />, document.getElementById('foot'));

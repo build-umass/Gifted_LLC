@@ -1,13 +1,19 @@
 import * as React from "react";
 import "../css/homepage.css"
 import Shop_item from "./shop_item";
+import Navbar from "./navbar";
+import Footer from "./footer";
 
 
 class Homepage extends React.Component<{}, {}> {
     render () {
         return (
+            <div>
+            <div>
+                <Navbar/>
+            </div>
             <div id="wrapper">
-                <div id="large_logo" className="panels">
+                <div id="large_logo">
                     <img  src={require('../files/gifted_logo.png')} />
                 </div>
                 <div id="content" className="panels" >
@@ -39,6 +45,10 @@ class Homepage extends React.Component<{}, {}> {
                         </div>
                     </div>
                 </div>
+                <div>
+                    <Footer/>
+                </div>
+            </div>
             </div>
         )
     }

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { string } from "prop-types";
 // import "../css/shop_item.css"
 
 const styles = {
@@ -18,7 +19,13 @@ const styles = {
     }
 }
 
-class Shop_item extends React.Component<{}, {}> {
+class Shop_item extends React.Component {
+
+    constructor(props: string) {
+        super(props);
+        this.state = {shirtPath: string};
+    }
+
     render () {
         return (
             <div style={styles.container}>
