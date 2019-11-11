@@ -6,6 +6,7 @@ import NavBar from "./components/navbar";
 import Homepage from "./components/homepage";
 import Second_Page from "./components/second_page";
 import Footer from "./components/footer";
+import Shop_Item from "./components/shop_item";
 import './css/common.css'
 
 const Body = (

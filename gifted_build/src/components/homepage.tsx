@@ -12,10 +12,13 @@ class Homepage extends React.Component<{}, {}> {
                     <div className="title">LLC</div>
                     <p className="paragraph">Everyone is.</p>
                 </div>
+                <div id="large_logo">
+                    <img className = "gifted_logo" src={require('../files/gifted_logo.png')} />
+                </div>
                 <div id="shop_container">
-                <img src={require('../files/shirt1.jpg')} />
-                    <img src={require('../files/shirt2.jpg')} />
-                    <img src={require('../files/shirt3.jpg')} />
+                    <img src={require('../files/shirt1.jpg')} className="shirt_item" />
+                    <img src={require('../files/shirt2.jpg')} className="shirt_item" />
+                    <img src={require('../files/shirt3.jpg')} className="shirt_item" />
                     <div className="description1">Unisex Combined Logo Script T</div>
                     <div className="description2">Unisex Combined Logo Script T</div>
                     <div className="description3">Unisex Gifted Logo T (Black/White)</div>
