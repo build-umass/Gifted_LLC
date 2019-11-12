@@ -1,4 +1,4 @@
-const { knex } =  require('./database')
+const { knex } =  require('../src/server/database.js')
 
 const product_images = "product_images"
 const products = "products"
