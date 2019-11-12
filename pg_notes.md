@@ -20,6 +20,16 @@
   ```
   CREATE ROLE build WITH LOGIN;
   ```
+
+- Exit postgres with 
+  ```
+  \c
+  ```
+- Log into postgres again 
+  - `U` specifies the user "build". `d` specifies the `postgres` database, which is present by default
+```
+   psql -U build -d postgres
+```
 - Create a database named api 
   ```
   CREATE DATABASE api;
