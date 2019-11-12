@@ -1,33 +1,19 @@
 const knexConstructor = require('knex')
 let knex;
-// Temporary: We can determine the actual method of figuring out which environment (dev or prod),
-// and figuring out how to connect to the DB later.
-// Knex has the option to provide a knexfile, with different configurations for dev vs prod
-if (process.env.NODE_ENV == 'production') {
-    // TODO: Change this to a real production configuration
-    knex = knexConstructor({
-        client: 'pg',
-        connection: {
-          user: 'build',
-          host: 'localhost',
-          database: 'api',
-          password: 'password',
-          port: 5432
-        },
-        pool: { min: 0, max: 5 } // no logic to these numbers
-    })
-} else {
-    knex = knexConstructor({
-        client: 'pg',
-        connection: {
-          user: 'build',
-          host: 'localhost',
-          database: 'api',
-          password: 'password',
-          port: 5432
-        },
-        pool: { min: 0, max: 5 } // no logic to these numbers
-    })
-}
+  
+var fs = require('fs')
+const ini = require('ini');
+const config = ini.parse(fs.readFileSync(process.env.database_configs, 'utf-8'));
+knex = knexConstructor({
+    client: 'pg',
+    connection: {
+      user: config.postgresql.user,
+      host: config.postgresql.host,
+      database: config.postgresql.database,
+      password: config.postgresql.password,
+      port: config.postgresql.port,
+    },
+    pool: { min: 0, max: 5 } // no logic to these numbers
+})
 
 module.exports.knex = knex
