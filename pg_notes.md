@@ -11,6 +11,33 @@
     - Restart postgres with `sudo service postgresql restart && sudo pg_ctlcluster <version> <cluster> restart` so postgres registers the change.
     - Run `psql postgres`, it should work.
 
+# Start development tables
+- enter into psql with your postgres account with 
+  ```
+  psql -U postgres
+  ```
+- Create a role of 'build' to your postgres instance 
+  ```
+  CREATE ROLE build WITH LOGIN;
+  ```
+
+- Exit postgres with 
+  ```
+  \c
+  ```
+- Log into postgres again 
+  - `U` specifies the user "build". `d` specifies the `postgres` database, which is present by default
+```
+   psql -U build -d postgres
+```
+- Create a database named api 
+  ```
+  CREATE DATABASE api;
+  ```
+- Run the script to create and propagate the tables
+  ```
+  bash ./db_setup.sh
+  ```
 # Useful commands
 - `pg_lsclusters`
   - List postgres clusters
