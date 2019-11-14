@@ -1,9 +1,17 @@
 #footer {
-    position: absolute;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    background-color:white;
+    clear: both;
+    position: relative;
+    height: 80px;
+    background-color: rgb(240, 243, 245);
+    color: white;
     text-align: center;
-    /* padding: 20px 0px; */
+    padding: 20px 0px;
 }
+
+.footer_information {
+    color: black;
+    font-family: monospace;
+    padding-top: 10px;
+}
+
+

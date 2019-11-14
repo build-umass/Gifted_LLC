@@ -1,0 +1,61 @@
+#container {
+    min-height: 10px;
+    text-align: center;
+}
+
+#special_olympics_img {
+    margin-top: 75px;
+    min-height:200px;
+}
+
+#about_partnership_container {
+    background-color: rgb(235, 230, 230);
+    min-width: 1060px;
+    padding-top: 15px;
+    margin-left: 100px;
+    margin-right:100px;
+    min-height: 450px;
+    margin-bottom: 100px;
+}
+
+#home_button {
+    float:left;
+    margin-left: 425px;
+    width: 10%;
+    min-height: 30px; 
+    margin-top: 30px;
+    background-color: #000000;
+}
+
+#donate_button {
+    float:left;
+    margin-left: 10px;
+    width: 10%;
+    min-height: 30px; 
+    margin-top: 30px;
+    background-color: #000000;
+}
+
+.home_button_p {
+    color: rgb(255, 255, 255);
+    padding-top: 3px;
+    font-size: 16px;
+    text-align: center;
+    font-family: Verdana;
+    font-weight: normal;
+}
+
+.spolympics_title {
+    text-align: center;
+    font-size: 50px;
+    font-family: monospace;
+    font-weight: normal;
+}
+
+.about_partnership_text {
+    max-width: 800px;
+    padding-left: 125px;
+    font-size: 15px;
+    font-family: monospace;
+    float: center;
+}
