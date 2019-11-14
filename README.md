@@ -23,6 +23,18 @@ And then to start the production server from the root dir,
 All of these scripts are available in the package.json file in case you want to look at how it works.
 
 ## Structure
+### Branch and commit names
+Branch names should be prefixed by an appropriate label
+
+* Feature/ - for a collection of stories that implement a core concept of the design
+* Bug/ - for branches that fix bugs or typos to the code
+* Release/ - for branches that tie up loose ends and is ready for production
+
+After the prefixes, like commit names, there should be a short description within the name of what the change accomplished.
+Commits should additional have additional "fix #__" in the title if the commit resolves an issue.
+
+Branch and commit as much as possible, this project should help develop better development practices and build up you got history.
+
 ### Front-end: 
 This is planned to be written in typescript using the react libraries. Any and all files that are displayed are going to be placed in the ./src/ folder. I tried to break up the code to have the routing in the entry ./src/index.tsx file, and all of the components its referencing in the ./src/components/ folder. 
 
