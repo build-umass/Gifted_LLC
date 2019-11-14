@@ -8,7 +8,7 @@
     "test": "webpack -v",
     "build": "webpack --config webpack-prod.config.js && webpack --config webpack-server.config.js",
     "start": "database_configs=./database/database.ini node src/server/dev.js",
-    "test:prod": "database_configs=./database/database.ini node dist/prod.js"
+    "start:prod": "database_configs=./database/database.ini node dist/prod.js"
   },
   "devDependencies": {
     "@types/node": "^12.7.11",
