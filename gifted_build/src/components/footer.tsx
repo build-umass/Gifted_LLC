@@ -11,6 +11,7 @@ class Footer extends React.Component<{}, {}> {
                 <img src={require('../files/twitter.png')}/>
 
             <div className= "footer_information">©2019 by Gifted Clothing Brand, LLC.</div>
+
             </div>
 
         )
