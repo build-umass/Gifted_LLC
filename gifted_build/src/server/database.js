@@ -1,9 +1,7 @@
+const config = require('./config')
 const knexConstructor = require('knex')
 let knex;
-  
-var fs = require('fs')
-const ini = require('ini');
-const config = ini.parse(fs.readFileSync(process.env.database_configs, 'utf-8'));
+
 knex = knexConstructor({
     client: 'pg',
     connection: {
