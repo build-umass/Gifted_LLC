@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow:500&display=swap');
 
 #navbar {
-    position: fixed;
+    position: relative;
     top:0;
     margin: 0;
-    padding: 4px 0px;
-    height: 40px;
+    /* padding: 5%; */
+    height: 20%;
     width: 100%;
     min-width: 800px;
     list-style-type: none;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     background-color: rgb(255, 255, 255);
+    z-index:1000;
 }
 
 .button-right {

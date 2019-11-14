@@ -8,10 +8,6 @@ import Footer from "./footer";
 class Homepage extends React.Component<{}, {}> {
     render () {
         return (
-            <div>
-            <div>
-                <Navbar/>
-            </div>
             <div id="wrapper">
                 <div id="large_logo">
                     <img  src={require('../files/gifted_logo.png')} />
@@ -45,10 +41,6 @@ class Homepage extends React.Component<{}, {}> {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <Footer/>
-                </div>
-            </div>
             </div>
         )
     }
