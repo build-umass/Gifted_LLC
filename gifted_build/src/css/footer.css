@@ -1,17 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
+
 #footer {
     clear: both;
     position: relative;
     height: 80px;
-    background-color: rgb(240, 243, 245);
-    color: white;
+    background-color: #f3f3f3;
     text-align: center;
-    padding: 20px 0px;
+    padding-top: 3%;
 }
 
 .footer_information {
     color: black;
-    font-family: monospace;
+    font-family: 'Barlow', sans-serif;
     padding-top: 10px;
+}
+
+.socail_media_img {
+    padding-left: 15px
 }
 
 
