@@ -9,9 +9,9 @@ class Homepage extends React.Component<{}, {}> {
     render () {
         return (
             <div id="wrapper">
-                <div id="large_logo">
+                {/* <div id="large_logo">
                     <img  src={require('../files/gifted_logo.png')} />
-                </div>
+                </div> */}
                 <div id="content" className="panels" >
                     <div id="brand_container">
                         <div className="title">Gifted Clothing Brand,</div>
