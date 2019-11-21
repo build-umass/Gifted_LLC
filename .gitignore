@@ -1,7 +1,10 @@
-# Prod files shouldn't be on repo
+  # Prod files shouldn't be on repo
 dist/
 
 # Dependencies should stay as dependencies
 node_modules/
+
+# Sessions files shouldn't be in the repo
+sessions/
 
 .DS_STORE
