@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
+
 #container {
     min-height: 10px;
     text-align: center;
@@ -5,40 +7,40 @@
 
 #our_partners_container {
     min-height: 400px;
-    margin-left:100px;
-    margin-right: 100px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #spolympics_container {
-    min-height: 500px;
-    margin-left:100px;
-    margin-right: 100px;
+    min-height: 450px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 
 #our_partners_text_container {
     max-width: 490px;
-    padding-top: 30px;
+    margin-top: 3%;
     float:left
 }
 
 #spolympics_text_container {
-    background-color: rgb(235, 230, 230);
-    max-width: 490px;
-    padding-top: 15px;
-    margin-left: 300px;
+    background-color: #f3f3f3;
+    max-width: 50%;
+    height: 100%;
+    margin-left: 20%;
     float:left
 }
 
 
 #handshake_img {
-    margin-top: 100px;
-    margin-left: 250px;
+    margin-top: 10%;
+    margin-left: 20%;
     float: left;
 }
 
 #learn_more_button {
-    margin-left: 190px;
+    margin-left: 40%;
     width: 20%;
     min-height: 45px; 
     background-color: #000000;
@@ -46,39 +48,39 @@
 
 .learn_more_p {
     color: rgb(255, 255, 255);
-    padding-top: 12px;
+    margin-top: 30%;
+    padding-top: 10%;
     font-size: 16px;
     text-align: center;
-    font-family: Verdana;
+    font-family: 'Barlow', sans-serif;
     font-weight: normal;
 }
 
 #spolympics_img {
     margin-top: 75px;
-    margin-left: 150px;
+    margin-left: 19%;
     float: left;
 }
 
-.spolympics_img_resize {
-    width: 540px;
-    height: auto;
-}
-
 .summary_text {
-    max-width: 490px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .our_partners_title {
     max-width: 490px;
     font-size: 60px;
-    font-family: monospace;
+    font-family: 'Barlow', sans-serif;
     font-weight: normal;
 }
 
 .spolympics_title {
-    max-width: 490px;
+    max-width: 90%;
     font-size: 50px;
-    font-family: monospace;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Barlow', sans-serif;
     font-weight: normal;
 }
 
