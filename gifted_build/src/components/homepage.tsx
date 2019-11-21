@@ -14,7 +14,7 @@ class Homepage extends React.Component<{}, {}> {
                 </div> */}
                 <div id="content" className="panels" >
                     <div id="brand_container">
-                        <div className="title">Gifted Clothing Brand,</div>
+                        <div className="title"><h2>Gifted Clothing Brand,</h2></div>
                         <div className="title">LLC</div>
                         <p className="paragraph">Everyone is.</p>
                     </div>
