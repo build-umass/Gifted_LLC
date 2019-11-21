@@ -12,9 +12,9 @@ import './css/common.css'
 
 const Body = (
     <Router>
-        <Route exact path ="/" component={Homepage} />
-        <Route path="/2" component={Second_Page} />
-        <Route path="/3" component={Special_Olympics} />
+        <Route exact path ="/home" component={Homepage} />
+        <Route path="/about" component={Second_Page} />
+        <Route path="/spolympics" component={Special_Olympics} />
     </Router>
 )
 

@@ -12,7 +12,7 @@ class Homepage extends React.Component<{}, {}> {
                 {/* <div id="large_logo">
                     <img  src={require('../files/gifted_logo.png')} />
                 </div> */}
-                <div id="content" className="panels" >
+                <div id="content">
                     <div id="brand_container">
                         <div className="title"><h2>Gifted Clothing Brand,</h2></div>
                         <div className="title">LLC</div>

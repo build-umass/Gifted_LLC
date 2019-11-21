@@ -10,7 +10,6 @@
     height:90%;
     min-height:90%;
     width:100%;
-    /* z-index:999; */
 }
 
 #wrapper {
@@ -24,7 +23,6 @@
     margin-top: 10%;
     background:white;
     height: 200%;
-    /* z-index: 999; */
 }
 
 #large_logo {
@@ -36,7 +34,6 @@
     background:#eee;
     position:fixed;
     top:10;
-    /* z-index:-1; */
 }
 
 .gifted_logo {
@@ -87,6 +84,7 @@
     text-align: center;
     font-size: 60px;
     font-family: 'Barlow', monospace;
+    color: black;
 }
 
 h1 {
@@ -111,7 +109,8 @@ h1 {
 
 .learn_more_p {
     color: rgb(255, 255, 255);
-    padding-top: 12px;
+    padding-top: auto;
+    padding-bottom: 3%;
     font-size: 16px;
     text-align: center;
     font-family: Verdana;
