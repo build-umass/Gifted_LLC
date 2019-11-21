@@ -6,12 +6,13 @@ class NavBar extends React.Component<{}, {}> {
         return (
             <div className='container'>
                 <ul id='navbar'>
-                    <a href="/"><li id='nav-name' className="nav-label">    Gifted-Ny       </li></a>
-                    <a href="/2"><li className="nav-label">                 Second Page     </li></a>
-                    <a href="/"><li className="nav-label">                  Element 1       </li></a>
-                    <a href="/"><li className="nav-label">                  Element 2       </li></a>
-                    <a href="/"><li className="nav-label">                  Steven          </li></a>
-                    <a href="/"><li className="nav-label">                  is cool         </li></a>
+                    {/* <a href="/"><li id='nav-name' className="nav-label button-left button-home"><img src={require('../files/gifted_logo.png')}/></li></a> */}
+                    <a href="/2"><li className="nav-label button-left button-home">Image</li></a>
+                    <a href="/2"><li className="nav-label button-left">Gifted</li></a>
+                    <a href="/"><li className="nav-label button-right button-cart">Cart</li></a>
+                    <a href="/"><li className="nav-label button-right">About</li></a>
+                    <a href="/"><li className="nav-label button-right">Shop</li></a>
+                    <a href="/"><li className="nav-label button-right">Home</li></a>
                 </ul>
             </div>
             )

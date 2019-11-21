@@ -12,6 +12,7 @@ class Footer extends React.Component<{}, {}> {
 
 
             <div className= "footer_information">©2019 by Gifted Clothing Brand, LLC.</div>
+
             </div>
 
         )

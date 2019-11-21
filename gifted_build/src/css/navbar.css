@@ -1,21 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:500&display=swap');
+
 #navbar {
+    position: fixed;
+    top:0;
     margin: 0;
     padding: 4px 0px;
     height: 40px;
+    width: 100%;
     min-width: 800px;
     list-style-type: none;
-    margin-bottom: 40px;
-    background-color: slategray;
+    margin-top: 40px;
+    background-color: rgb(255, 255, 255);
+}
+
+.button-right {
+    float: right;
+}
+
+.button-cart{
+    margin-right:5%;
+}
+
+.button-home{
+    margin-left:5%;
+    width: 20 px;
+    height: 200 px;
+}
+
+.button-left {
+    float: left;
 }
 
 .nav-label {
+    font-family: "Barlow", sans-serif;
     font-size: 20px;
-    padding: 8px 10px;
+    padding: 10px 10px;
     display: inline-block;
-    color: #f4f7f7;
+    color: #000000;
     cursor: pointer;
-}
-
-.nav-label:hover {
-    background-color: rgb(97, 103, 109);
 }
