@@ -9,7 +9,10 @@ router.get('/products/all', (req, res) => {
             console.log(rows)
             res.json(rows)
         })
-        .catch(err => res.end({err: err}))
+        .catch(err => {
+            //TODO: We probably don't want to expose errors in production?
+            res.end(JSON.stringify(err))
+        })
 })
 
 module.exports = router;
