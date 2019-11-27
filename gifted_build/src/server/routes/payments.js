@@ -1,15 +1,16 @@
-const stripe = require('../config').stripe
+const stripeConfig = require('../config').stripe
+const stripe = require('stripe')(stripeConfig.secretKey)
 const express = require('express')
 const router = express.Router()
 
-router.get('stripe-key', (req, res) => {
-    res.send({publicKey: stripe.publicKey})
+router.get('/stripe-key', (req, res) => {
+    res.send({publishableKey: stripeConfig.publicKey})
 })
 
 router.post("/pay", async (req, res) => {
     const { paymentMethodId, paymentIntentId, items, currency, useStripeSdk } = req.body
 
-    const orderAmount = calculateOrderAmount(items)
+    const orderAmount = 20 * 100
 
     try {
       let intent
@@ -64,3 +65,4 @@ const generateResponse = intent => {
   }
 };
 
+module.exports = router
