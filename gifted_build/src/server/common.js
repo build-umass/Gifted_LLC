@@ -11,6 +11,8 @@ module.exports.createBackendServer = ({secret}) => {
     server.use(bodyParser.json())
     server.use(require('./routes/products'));
 
+    server.use('/payments', require('./routes/payments'))
+
     server.use(session({
         secret: secret,
         store: new sessionFileStore(),
