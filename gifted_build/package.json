@@ -7,7 +7,7 @@
   "scripts": {
     "test": "webpack -v",
     "build": "webpack --config webpack-prod.config.js && webpack --config webpack-server.config.js",
-    "start": "config=./dev.ini node src/server/dev.js",
+    "start": "config=./dev.ini nodemon src/server/dev.js",
     "test:prod": "config=./prod.ini node dist/prod.js"
   },
   "devDependencies": {
@@ -38,11 +38,12 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "knex": "^0.20.1",
+    "nodemon": "^2.0.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pg": "^7.12.1",
     "session-file-store": "^1.3.1",
-    "stripe": "^7.13.0"
+    "stripe": "^7.14.0"
   },
   "license": "ISC"
 }
