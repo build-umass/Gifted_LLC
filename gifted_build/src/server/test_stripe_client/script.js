@@ -9,7 +9,7 @@ var orderData = {
 // Disable the button until we have Stripe set up on the page
 document.querySelector("button").disabled = true;
 
-const prefix = "payments"
+const prefix = "http://localhost:8080/payments"
 
 fetch(prefix +"/stripe-key")
   .then(function(result) {

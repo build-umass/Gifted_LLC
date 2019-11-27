@@ -25,4 +25,4 @@ const server = createBackendServer({secret: 'development-secret'})
 server.listen(8080, () => console.log('development server listening on port 8080'))
 
 // The payments test webpage must be served on the dev server
-server.use('/', express.static(__dirname + '/test_stripe_client'));
+server.use('/stripe_test', express.static(__dirname + '/test_stripe_client'));
