@@ -12,3 +12,6 @@ sessions/
 
 # OS generated files
 .DS_Store
+
+# .env file contains sensitive information
+.env

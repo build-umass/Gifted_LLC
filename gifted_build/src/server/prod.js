@@ -1,3 +1,4 @@
+require('./config')
 const { createBackendServer } = require('./common')
 const express = require('express')
 

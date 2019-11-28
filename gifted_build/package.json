@@ -7,8 +7,8 @@
   "scripts": {
     "test": "webpack -v",
     "build": "webpack --config webpack-prod.config.js && webpack --config webpack-server.config.js",
-    "start": "config=./dev.ini nodemon src/server/dev.js",
-    "test:prod": "config=./prod.ini node dist/prod.js"
+    "start": "nodemon src/server/dev.js",
+    "test:prod": "node dist/prod.js"
   },
   "devDependencies": {
     "@types/node": "^12.7.11",
@@ -18,7 +18,6 @@
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
-    "ini": "^1.3.5",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
@@ -35,8 +34,10 @@
   "dependencies": {
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
+    "find-config": "^1.0.0",
     "knex": "^0.20.1",
     "nodemon": "^2.0.1",
     "passport": "^0.4.0",
