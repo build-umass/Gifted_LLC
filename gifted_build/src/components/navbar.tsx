@@ -29,7 +29,12 @@ class NavBar extends React.Component<{}, {}> {
                             <img src={require('../files/gifted_logo.png')}/>
                         </a>
 
-                        <a className="navbar-item" href="/2"> Gifted </a>
+                        <a className="navbar-item"> 
+                            <div>
+                                <p id="logo_title">Gifted</p> 
+                                <p id="logo_subtitle">Everyone is.</p>
+                            </div> 
+                        </a>
 
                         <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" onClick={this.handle_active}>
                             <span aria-hidden="true"></span>
