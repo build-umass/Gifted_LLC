@@ -5,6 +5,35 @@
     text-align: center;
 }
 
+#big_boy {
+    background-image: url('../files/gifted_logo.png');
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    /* background-size: cover;  */
+    height:100%;
+    width: 100%;
+    /* background-attachment: fixed; */
+}
+
+
+#big_boy::after {
+    /* Display and position the pseudo-element */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+    /* Move the pseudo-element back away from the camera,
+     * then scale it back up to fill the viewport.
+     * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+    transform: translateZ(-1px) scale(.1);
+    /* Force the background image to fill the whole element. */
+    background-size: 100%;
+    /* Keep the image from overlapping sibling elements. */ 
+    z-index: -1;
+  }
+
 .panels {
     position:relative;
     height:90%;
@@ -13,14 +42,7 @@
     z-index:1000;
 }
 
-#wrapper {
-    position:absolute;
-    height:100%;
-    width:100%;
-}
-
 #content {
-    margin-top:90%;
     background:white;
     height: 200%;
 }

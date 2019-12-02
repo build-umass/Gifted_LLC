@@ -1,22 +1,43 @@
-import * as React from "react";
+import * as React from "react"
 import "../css/homepage.css"
-import Shop_item from "./shop_item";
-import Navbar from "./navbar";
-import Footer from "./footer";
+import Shop_item from "./shop_item"
+import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 
 
-class Homepage extends React.Component<{}, {}> {
+class Homepage extends React.Component<{}, {offset: number}> {
+    constructor(props: {}) {
+        super(props)    
+      this.state = {
+        offset: 0
+      };
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.parallaxShift);
+      }
+      componentWillUnmount() {
+        window.removeEventListener('scroll', this.parallaxShift);
+      }
+      parallaxShift = () => {
+        this.setState({
+          offset: window.pageYOffset
+        });
+      };
+
     render () {
         return (
-            <div>
-            <div>
-                <Navbar/>
-            </div>
             <div id="wrapper">
-                <div id="large_logo">
-                    <img  src={require('../files/gifted_logo.png')} />
-                </div>
-                <div id="content" className="panels" >
+                <section className="hero is-fullheight"> 
+                    <div id="big_boy" className="hero-body container is-fixed"
+                    style={{ backgroundPositionY: this.state.offset / 1.5}}>
+                        
+                    </div> 
+
+                    {/* <div id="big_boy" className="hero-body container is-fixed">
+                        
+                    </div> */}
+                </section>
+                <div className="container" >
                     <div id="brand_container">
                         <div className="title">Gifted Clothing Brand,</div>
                         <div className="title">LLC</div>
@@ -45,10 +66,6 @@ class Homepage extends React.Component<{}, {}> {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <Footer/>
-                </div>
-            </div>
             </div>
         )
     }

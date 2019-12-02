@@ -8,7 +8,7 @@ import Second_Page from "./components/second_page";
 import Special_Olympics from "./components/special_olympics";
 import Footer from "./components/footer";
 import Shop_Item from "./components/shop_item";
-import './css/common.css'
+import './css/common.scss'
 
 const Body = (
     <Router>
@@ -18,6 +18,6 @@ const Body = (
     </Router>
 )
 
-// ReactDOM.render(<NavBar />, document.getElementById('nav'));
-ReactDOM.render(Body, document.getElementById('root'));
-// ReactDOM.render(<Footer />, document.getElementById('foot'));
+ReactDOM.render(<NavBar />, document.getElementById('nav'));
+ReactDOM.render(Body, document.getElementById('index'));
+ReactDOM.render(<Footer />, document.getElementById('foot'));
