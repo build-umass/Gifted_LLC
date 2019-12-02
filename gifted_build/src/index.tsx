@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 import NavBar from "./components/navbar";
 import Homepage from "./components/homepage";
-import Second_Page from "./components/second_page";
+import About_Page from "./components/about_page";
 import Special_Olympics from "./components/special_olympics";
 import Footer from "./components/footer";
 import Shop_Item from "./components/shop_item";
@@ -13,8 +13,8 @@ import './css/common.scss'
 const Body = (
     <Router>
         <Route exact path ="/" component={Homepage} />
-        <Route path="/2" component={Second_Page} />
-        <Route path="/3" component={Special_Olympics} />
+        <Route path="/about" component={About_Page} />
+        <Route path="/partners/Special_Olympics" component={Special_Olympics} /> {/** Should dynamically load partner pages */}
     </Router>
 )
 

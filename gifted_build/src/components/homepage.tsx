@@ -1,8 +1,6 @@
 import * as React from "react"
 import "../css/homepage.css"
 import Shop_item from "./shop_item"
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
-
 
 class Homepage extends React.Component<{}, {offset: number}> {
     constructor(props: {}) {
@@ -30,12 +28,7 @@ class Homepage extends React.Component<{}, {offset: number}> {
                 <section className="hero is-fullheight"> 
                     <div id="big_boy" className="hero-body container is-fixed"
                     style={{ backgroundPositionY: this.state.offset / 1.5}}>
-                        
                     </div> 
-
-                    {/* <div id="big_boy" className="hero-body container is-fixed">
-                        
-                    </div> */}
                 </section>
                 <div className="container" >
                     <div id="brand_container">
