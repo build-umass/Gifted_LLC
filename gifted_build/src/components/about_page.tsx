@@ -1,7 +1,7 @@
 import * as React from "react";
 import "../css/second_page.css"
 
-class Second_Page extends React.Component<{}, {}> {
+class About_page extends React.Component<{}, {}> {
     render () {
         return (
             <div id="container">
@@ -37,4 +37,4 @@ class Second_Page extends React.Component<{}, {}> {
     }
 }
 
-export default Second_Page;
+export default About_page;
