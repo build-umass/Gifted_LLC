@@ -28,7 +28,7 @@ class Second_Page extends React.Component<{}, {}> {
                         non-profit organization that does so much for the special needs community. 
                         Click below to learn more about our partnership:</p>
                         <div id="learn_more_button">
-                            <a href="/3"><p className="learn_more_p"> Learn More </p></a>
+                            <a href="/partners"><p className="learn_more_p"> Learn More </p></a>
                         </div>
                     </div>
                 </div>
