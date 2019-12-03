@@ -25,7 +25,7 @@ class NavBar extends React.Component<{}, {}> {
                 </div>
                 <div className="container">
                     <div className="navbar-brand">
-                        <a className="navbar-item button-home" href="/">
+                        <a className="navbar-item button-home" href="/home">
                             <img src={require('../files/gifted_logo.png')}/>
                         </a>
 
@@ -45,14 +45,14 @@ class NavBar extends React.Component<{}, {}> {
 
                     <div id="nav-collapsed" className="navbar-menu container">
                         <div className="navbar-end">
-                            <a className="navbar-item" href="/">Home</a>
-                            <a className="navbar-item" href="/">Shop</a>
+                            <a className="navbar-item" href="/home">Home</a>
+                            <a className="navbar-item" href="/shop">Shop</a>
                             <div className="navbar-item has-dropdown is-hoverable">
                                 <a className="navbar-item">
                                     Our Partners
                                 </a>  
                                 <div className="navbar-dropdown">
-                                    <a className="navbar-item">
+                                    <a className="navbar-item" href="/partners">
                                         Special Olympics New York
                                     </a>
                                 </div>
@@ -72,18 +72,6 @@ class NavBar extends React.Component<{}, {}> {
                 </div>
                 
             </nav>
-
-            // <div className='container'>
-            //     <ul id='navbar'>
-            //         {/* <a href="/"><li id='nav-name' className="nav-label button-left button-home"><img src={require('../files/gifted_logo.png')}/></li></a> */}
-            //         <a href="/2"><li className="nav-label button-left button-home">Image</li></a>
-            //         <a href="/2"><li className="nav-label button-left">Gifted</li></a>
-            //         <a href="/"><li className="nav-label button-right button-cart">Cart</li></a>
-            //         <a href="/"><li className="nav-label button-right">About</li></a>
-            //         <a href="/"><li className="nav-label button-right">Shop</li></a>
-            //         <a href="/"><li className="nav-label button-right">Home</li></a>
-            //     </ul>
-            // </div>
             )
     }
 }
