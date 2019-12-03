@@ -1,6 +1,5 @@
 import * as React from "react";
 import { string } from "prop-types";
-// import "../css/shop_item.css"
 
 const styles = {
     container:{

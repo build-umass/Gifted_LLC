@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../css/second_page.css"
+import "../css/about_page.css"
 
 class About_page extends React.Component<{}, {}> {
     render () {
