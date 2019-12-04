@@ -2,7 +2,7 @@ const { knex } = require('../database')
 const express = require('express');
 const router = express.Router();
 
-router.get('/products/all', (req, res) => {
+router.get('/all', (req, res) => {
     knex('products')
         .select()
         .then(rows => {
