@@ -3,7 +3,7 @@ require('dotenv').config({ path: require('find-config')('.env', {home: false})})
 const env = process.env
 module.exports = {
     stripe: {
-        publishableKey: env.STRIPE_publicKey,
+        publishableKey: env.STRIPE_publishableKey,
         secretKey: env.STRIPE_secretKey
     },
     database: {
