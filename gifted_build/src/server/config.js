@@ -1,9 +1,9 @@
 // Recursively search directories until .env file is found
-require('dotenv').config({ path: require('find-config')('.env')})
+require('dotenv').config({ path: require('find-config')('.env', {home: false})})
 const env = process.env
 module.exports = {
     stripe: {
-        publicKey: env.STRIPE_publicKey,
+        publishableKey: env.STRIPE_publicKey,
         secretKey: env.STRIPE_secretKey
     },
     database: {

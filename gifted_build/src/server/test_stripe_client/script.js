@@ -1,17 +1,21 @@
-// A reference to Stripe.js
 var stripe;
+const prefix = "http://localhost:8080/pay"
 
 var orderData = {
-  items: [{ id: "photo-subscription" }],
+  items: [{ sku: 36523641234523 }],
   currency: "usd"
 };
 
 // Disable the button until we have Stripe set up on the page
 document.querySelector("button").disabled = true;
 
-const prefix = "http://localhost:8080/payments"
-
-fetch(prefix +"/stripe-key")
+fetch(prefix + "/create-payment-intent", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(orderData)
+})
   .then(function(result) {
     return result.json();
   })
@@ -21,16 +25,18 @@ fetch(prefix +"/stripe-key")
   .then(function({ stripe, card, clientSecret }) {
     document.querySelector("button").disabled = false;
 
+    // Handle form submission.
     var form = document.getElementById("payment-form");
     form.addEventListener("submit", function(event) {
       event.preventDefault();
+      // Initiate payment when the submit button is clicked
       pay(stripe, card, clientSecret);
     });
   });
 
+// Set up Stripe.js and Elements to use in checkout form
 var setupElements = function(data) {
   stripe = Stripe(data.publishableKey);
-  /* ------- Set up Stripe Elements to use in checkout form ------- */
   var elements = stripe.elements();
   var style = {
     base: {
@@ -58,70 +64,60 @@ var setupElements = function(data) {
   };
 };
 
-var handleAction = function(clientSecret) {
-  stripe.handleCardAction(clientSecret).then(function(data) {
-    if (data.error) {
-      showError("Your card was not authenticated, please try again");
-    } else if (data.paymentIntent.status === "requires_confirmation") {
-      fetch(prefix +"/pay", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          paymentIntentId: data.paymentIntent.id
-        })
-      })
-        .then(function(result) {
-          return result.json();
-        })
-        .then(function(json) {
-          if (json.error) {
-            showError(json.error);
-          } else {
-            orderComplete(clientSecret);
-          }
-        });
-    }
-  });
-};
-
 /*
- * Collect card details and pay for the order
+ * Calls stripe.confirmCardPayment which creates a pop-up modal to
+ * prompt the user to enter extra authentication details without leaving your page
  */
-var pay = function(stripe, card) {
+var pay = function(stripe, card, clientSecret) {
   changeLoadingState(true);
 
-  // Collects card details and creates a PaymentMethod
+  // Initiate the payment.
+  // If authentication is required, confirmCardPayment will automatically display a modal
   stripe
-    .createPaymentMethod("card", card)
+    .confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: card
+      }
+    })
     .then(function(result) {
-      if (result.error) {
-        showError(result.error.message);
-      } else {
-        orderData.paymentMethodId = result.paymentMethod.id;
+        let id;
+        if (result.paymentIntent) {
+            // the payment succeeded
+            id = result.paymentIntent.id
+        } else if (result && result.error && result.error.payment_intent) {
+            // the payment failed b/c some check failed on stripe's servers
+            id = result.error.payment_intent.id
+        } else {
+            // the payment failed b/c of a client side check
+            showError(result.error.message)
+            return
+        }
 
-        return fetch(prefix +"/pay", {
+        fetch(prefix + "/finish-payment-intent", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(orderData)
+          body: JSON.stringify({
+                 id: id,
+          })
+        })
+        .then(async (resp) => {
+            return resp.json()
+        })
+        .then(function(data) {
+            if (data.BUILD_error) {
+                showError(data.BUILD_error)
+            } else if (data.status === "failed") {
+                showError(data.message)
+            } else {
+                // the client secret is used to access the payment, but
+                // I can just return the relevant information directly
+                // just tell me what to return
+                // - Ved
+                orderComplete(data.client_secret)
+            }
         });
-      }
-    })
-    .then(function(result) {
-      return result.json();
-    })
-    .then(function(response) {
-      if (response.error) {
-        showError(response.error);
-      } else if (response.requiresAction) {
-        // Request authentication
-        handleAction(response.clientSecret);
-      } else {
-        orderComplete(response.clientSecret);
-      }
     });
 };
 
@@ -146,8 +142,6 @@ var orderComplete = function(clientSecret) {
 };
 
 var showError = function(errorMsgText) {
-  console.log("server side error?:")
-  console.log(errorMsgText)
   changeLoadingState(false);
   var errorMsg = document.querySelector(".sr-field-error");
   errorMsg.textContent = errorMsgText;
