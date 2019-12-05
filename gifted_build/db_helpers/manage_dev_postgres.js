@@ -3,6 +3,7 @@ const { knex } =  require('../src/server/database.js')
 const product_images = "product_images"
 const products = "products"
 const users = "users"
+const orders = "orders"
 
 // Deletes existing tables and recreates them
 async function resetDB() {
@@ -15,6 +16,7 @@ async function resetDB() {
         // Must drop product_images table before products table because of foreign key constraint
         await dropTable(product_images)
         await dropTable(products)
+        await dropTable(orders)
 
         console.log(`Creating ${products} table`)
         await knex.schema.createTable(products, table => {
@@ -41,6 +43,11 @@ async function resetDB() {
             table.string('hash')
             // no salt needed because bcrypt stores the salt in the hash
             //table.string('salt')
+        })
+
+        console.log(`Creating ${orders} table`)
+        await knex.schema.createTable(orders, table => {
+            table.string('payment_id').primary()
         })
 }
 

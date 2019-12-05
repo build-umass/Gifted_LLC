@@ -40,6 +40,7 @@ async function calculateOrderAmount(SKUs) {
 
 router.post("/create-payment-intent", async (req, res) => {
     const { items, currency } = req.body;
+    // TODO: items should just be an array of SKUs
     const amount = await calculateOrderAmount(items.map(item => item.sku))
     const paymentIntent = await stripe.paymentIntents.create({
         amount: amount,
@@ -59,18 +60,20 @@ router.post("/create-payment-intent", async (req, res) => {
 router.post("/finish-payment-intent", async (req, res) => {
     stripe.paymentIntents.retrieve(
         req.body.id,
-        (err, intent) => {
+        async (err, intent) => {
             if (err) {
                 // This is an internal API error -- the client may have supplied invalid input
-                return res.status(400).json({BUILD_error: err.message})
+                return res.status(400).json({internal_error: err.message})
             }
             if (intent.last_payment_error) {
                 const payment_error = intent.last_payment_error
                 return res.json({
                     status: "failed",
-                    message: payment_error.message
+                    // TODO: The code can be turned into an actual error message later
+                    message: payment_error.code
                 })
             }
+            await addPayment(intent.client_secret)
             return res.json({
                 status: "succeeded",
                 client_secret: intent.client_secret

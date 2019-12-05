@@ -106,8 +106,8 @@ var pay = function(stripe, card, clientSecret) {
             return resp.json()
         })
         .then(function(data) {
-            if (data.BUILD_error) {
-                showError(data.BUILD_error)
+            if (data.internal_error) {
+                showError("internal error: " + data.internal_error)
             } else if (data.status === "failed") {
                 showError(data.message)
             } else {
