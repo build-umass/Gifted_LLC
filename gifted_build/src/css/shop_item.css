@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:500&display=swap');
+
+.shop_item {
+    height: 20%;
+    width: 20%;
+    align-content: center;
+    flex: 20%;
+    padding: 5%;
+    margin: 20%;
+    border-style: solid;
+}

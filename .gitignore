@@ -6,3 +6,9 @@ node_modules/
 
 # Sessions files shouldn't be in the repo
 sessions/
+<<<<<<< HEAD
+=======
+
+# For mac users
+.DS_Store
+>>>>>>> 2_partnerpage
