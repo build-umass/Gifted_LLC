@@ -8,6 +8,8 @@ Install dependencies by using `npm i`
 
 We are using webpack 4.40+ to bundle the modules of react and files to files that can be used in both development or in production. All commands going forwared will require two ports to serve the files of the projects, [3000](http://localhost:3000/) for the client and [8080](http://localhost:3000/) for the backend server.
 
+**Important**: In order to run the back-end server, you need to configure it. To do this, copy the .env.sample file to a .env file in the same directory. Then fill in the values for `STRIPE_publishableKey` and `STRIPE_secretKey`. Front-end developers should also do this because the front-end relies on the backend.
+
 A development environment is provided and can be run using
 
 `npm start`
@@ -18,7 +20,7 @@ To package the files that you created for a production build, you need to run,
 
 And then to start the production server from the root dir,
 
-`npm run start:prod`
+`npm run test:prod`
 
 All of these scripts are available in the package.json file in case you want to look at how it works.
 
