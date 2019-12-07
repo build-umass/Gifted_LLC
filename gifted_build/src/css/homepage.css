@@ -1,15 +1,129 @@
-#container {
-    min-height: 760px;
+@import url('https://fonts.googleapis.com/css?family=Barlow:500&display=swap');
+
+#brand_container {
+    min-height: 250px;
     text-align: center;
 }
 
-.title {
-    height: 60px;
-    color: slategrey;
-    font-size: 32px;
+#big_boy {
+    background-image: url('../files/gifted_logo.png');
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    /* background-size: cover;  */
+    height:100%;
+    width: 100%;
+    /* background-attachment: fixed; */
 }
 
-#container img {
-    width: 120px;
+.panels {
+    position:relative;
+    height:90%;
+    min-height:90%;
+    width:100%;
+    z-index:1000;
+}
+
+#content {
+    background:white;
+    height: 200%;
+}
+
+#large_logo {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    margin-top: 5%;
+    width: 100%;
+    background:#eee;
+    position:fixed;
+    top:10;
+    z-index:-99;
+}
+
+.gifted_logo {
+    height: 80%;
+    width: 600px;
+    width: 400px;
+}
+
+.shop_container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+}
+
+#mission_statement_container {
+    min-height: 500px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#statement_container {
+    text-align: center;
+    width: 85%;
+    min-height: 400px; 
+    background-color: #f3f3f3;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+#learn_more_button {
+    text-align: center;
+    align-content: center;
+    width: 10%;
+    min-height: 45px; 
+    background-color: #000000;
+    /* margin-top: 55px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right:0px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 60px;
+    font-family: 'Barlow', monospace;
+}
+
+h1 {
+    font-family: 'Barlow', sans-serif;
+    font-weight: normal;
+}
+
+.mission_title {
+    font-family: Verdana;
+    font-weight: normal;  
+    font-size: 40px; 
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+.paragraph {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.learn_more_p {
+    color: rgb(255, 255, 255);
+    padding-top: 12px;
+    font-size: 16px;
+    text-align: center;
+    font-family: Verdana;
+    font-weight: normal;
+}
+
+.mission_paragraph {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    text-align: center;
 }
 

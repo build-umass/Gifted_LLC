@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
+
+#container {
+    min-height: 10px;
+    text-align: center;
+}
+
+#our_partners_container {
+    min-height: 400px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#spolympics_container {
+    min-height: 450px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+#our_partners_text_container {
+    max-width: 490px;
+    margin-top: 3%;
+    float:left
+}
+
+#spolympics_text_container {
+    background-color: #f3f3f3;
+    max-width: 50%;
+    height: 100%;
+    margin-left: 20%;
+    float:left
+}
+
+
+#handshake_img {
+    margin-top: 10%;
+    margin-left: 20%;
+    float: left;
+}
+
+#learn_more_button {
+    margin-left: 40%;
+    width: 20%;
+    min-height: 45px; 
+    background-color: #000000;
+}
+
+.learn_more_p {
+    color: rgb(255, 255, 255);
+    margin-top: 30%;
+    padding-top: 10%;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-weight: normal;
+}
+
+#spolympics_img {
+    margin-top: 75px;
+    margin-left: 19%;
+    float: left;
+}
+
+.summary_text {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.our_partners_title {
+    max-width: 490px;
+    font-size: 60px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: normal;
+}
+
+.spolympics_title {
+    max-width: 90%;
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Barlow', sans-serif;
+    font-weight: normal;
+}
+
+.title {
+    height: 60px;
+    color: slategrey;
+    font-size: 32px;
+}
+
+#container img {
+    width: 120px;
+}
