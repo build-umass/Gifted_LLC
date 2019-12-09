@@ -1,3 +1,4 @@
+require('./config')
 const { createBackendServer }  = require('./common')
 const express = require('express')
 const webpack = require('webpack');
@@ -23,3 +24,6 @@ app.listen(3000, () => console.log('production server listening on port 3000'))
 
 const server = createBackendServer({secret: 'development-secret'})
 server.listen(8080, () => console.log('development server listening on port 8080'))
+
+// The payments test webpage must be served on the dev server
+server.use('/stripe_test', express.static(__dirname + '/test_stripe_client'));

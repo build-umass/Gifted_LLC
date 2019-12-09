@@ -9,7 +9,9 @@ module.exports.createBackendServer = ({secret}) => {
 
     server.use(bodyParser.urlencoded({extended: false}))
     server.use(bodyParser.json())
-    server.use(require('./routes/products'));
+    server.use('/products', require('./routes/products'));
+
+    server.use('/pay', require('./routes/payments'))
 
     server.use(session({
         secret: secret,

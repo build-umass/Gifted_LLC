@@ -2,14 +2,17 @@ const { knex } = require('../database')
 const express = require('express');
 const router = express.Router();
 
-router.get('/products/all', (req, res) => {
+router.get('/all', (req, res) => {
     knex('products')
         .select()
         .then(rows => {
             console.log(rows)
             res.json(rows)
         })
-        .catch(err => res.end({err: err}))
+        .catch(err => {
+            //TODO: We probably don't want to expose errors in production?
+            res.end(JSON.stringify(err))
+        })
 })
 
 module.exports = router;

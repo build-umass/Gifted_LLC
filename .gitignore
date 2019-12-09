@@ -6,9 +6,12 @@ node_modules/
 
 # Sessions files shouldn't be in the repo
 sessions/
-<<<<<<< HEAD
-=======
 
-# For mac users
+# IDE config files
+.vscode/
+
+# OS generated files
 .DS_Store
->>>>>>> 2_partnerpage
+
+# .env file contains sensitive information
+.env
